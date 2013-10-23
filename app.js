@@ -15,12 +15,7 @@ var pgclient;
 
 pg.connect(process.env.HEROKU_POSTGRESQL_ORANGE_URL, function(err, client, done) {
 	pgclient = client;
-	client.query('SELECT * FROM users', function(err, result) {
-    done();
-    if(err) return console.error(err);
-    console.log(result.rows);
-  });
-});
+ });
 
 // all environments
 app.set('port', process.env.PORT || 3000);
