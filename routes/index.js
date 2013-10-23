@@ -4,5 +4,10 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+	client.query('SELECT * FROM products', function(err, result) {
+    	done();
+    	if(err) return console.error(err);
+    	console.log(result.rows);
+		res.render('index', { title: 'Express', products: result.rows });
+  });
 };
