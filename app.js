@@ -12,7 +12,7 @@ var pg = require('pg');
 
 var app = express();
 
-pg.connect(process.env.DATABASE_URL, function(err, client, done) {
+pg.connect(process.env.HEROKU_POSTGRESQL_ORANGE_URL, function(err, client, done) {
   client.query('SELECT * FROM users', function(err, result) {
     done();
     if(err) return console.error(err);
