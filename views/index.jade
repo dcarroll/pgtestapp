@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  table
+  table(cell-padding="10", border="1", bordorcolor="black", borderstyle="solid")
     each item in products
       tr
         td #{item.title}
