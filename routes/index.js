@@ -4,7 +4,7 @@
  */
 
 exports.index = function(req, res){
-	client.query('SELECT * FROM products', function(err, result) {
+	pgclient.query('SELECT * FROM products', function(err, result) {
     	done();
     	if(err) return console.error(err);
     	console.log(result.rows);
